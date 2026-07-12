@@ -1,3 +1,7 @@
+output "database_migration_projects_id" {
+  description = "Map of id values across all database_migration_projects, keyed the same as var.database_migration_projects"
+  value       = { for k, v in azurerm_database_migration_project.database_migration_projects : k => v.id }
+}
 output "database_migration_projects_location" {
   description = "Map of location values across all database_migration_projects, keyed the same as var.database_migration_projects"
   value       = { for k, v in azurerm_database_migration_project.database_migration_projects : k => v.location }
